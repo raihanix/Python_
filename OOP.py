@@ -173,3 +173,159 @@ class Mobil:
 Mobil.intro_mobil()
 mobil_1 = Mobil("DicodingCar")
 mobil_1.intro_mobil()
+
+'''
+Perhatikan lebih baik output-nya, kode di atas menerima sebuah 
+parameter, yakni kelas Mobil walaupun ketika pemanggilan fungsi 
+intro_mobil() kita tidak memberikan argumen apa pun.
+'''
+
+print("________________")
+print("INHERITANCE/PEWARISAN")
+print("________________")
+
+class Mobil:
+    def __init__(self,warna,merek,kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+
+    def tambah_kecepatan(self):
+        self.kecepatan +=10
+
+mobil_1 = Mobil("merah","lambo",160)
+print(mobil_1.kecepatan)
+
+class MobilSport(Mobil):
+    def turbo(self):
+        self.kecepatan += 50
+
+#kelas mobil dasar
+mobil_1 = Mobil("merah","lambo",160)
+print(mobil_1.kecepatan)
+
+#kelas mobil sport
+mobil_sport_1 = MobilSport("hitam","avanza",160)
+print(mobil_sport_1.kecepatan)
+mobil_sport_1.turbo()
+print(mobil_sport_1.kecepatan)
+
+print("________________")
+print("OVERRIDE")
+print("________________")
+
+class Mobil:
+    def __init__(self, warna,merek,kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+    
+    def tambah_kecepatan(self): #tambah kecepatan
+        self.kecepatan += 10
+
+class MobilSport(Mobil):
+    def turbo(self):
+        self.kecepatan += 50
+
+    def tambah_kecepatan(self): #tambah kecepatan
+        self.kecepatan += 20 
+
+#kelas mobil sport
+mobil_sport_1 = MobilSport("hitam","avanza",160)
+print(mobil_sport_1.kecepatan)
+mobil_sport_1.tambah_kecepatan() #memanggil metode baru menambah kecepatan
+print(mobil_sport_1.kecepatan)
+
+'''
+Namun, perlu dipahami bahwa menimpa bukan berarti mengubah metode 
+dari kelas induk. Hal ini karena metode dari kelas baru tersebut merupakan 
+hasil dari pewarisan sehingga tidak akan mengubah metode dari kelas induk.
+'''
+print("________________")
+print("SUPER CLASS")
+print("________________")
+
+class Mobil:
+    def __init__(self,warna,merek,kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+
+    def tambah_kecepatan(self):
+        self.kecepatan += 10
+
+class MobilSport(Mobil):
+    def turbo(self):
+        self.kecepatan += 50
+
+    def tambah_kecepatan(self):
+        super().tambah_kecepatan()
+        print("kecepatan anda meningkat hati hati")
+
+#kelas mobil sport
+mobil_sport_1 = MobilSport("hitam","avanza",160)
+mobil_sport_1.tambah_kecepatan()
+print(mobil_sport_1.kecepatan)
+
+'''
+Pada metode ini, kita menggunakan "super()" untuk mengambil metode 
+tambah_kecepatan yang berasal dari super class atau induknya, yaitu kelas 
+Mobil. Dengan begitu, program akan menjalankan metode tersebut dan di 
+bawahnya kita menambahkan teks baru sesuai kebutuhan pada kelas turunan 
+berupa "Kecepatan Anda meningkat! Hati-hati!".
+'''
+
+print("________________")
+print("KUIS DICODING")
+print("________________")
+
+
+class Animal:
+    def __init__(self,name,age,species):
+        self.name = name
+        self.age = age
+        self.species = species
+
+class Cat(Animal):
+    def deskripsi(self):
+        return f"{self.name} adalah kucing berjenis {self.species} yang sudah berumur {self.age}tahun"
+    
+    def suara(self):
+        return "meow"
+    
+#membuat instance dari class cat    
+MyCat = Cat("Neko",3,"Persian")
+#menampilkan deskripsi dan suara mycat   
+print(MyCat.deskripsi())
+print(MyCat.suara())
+
+
+print("versi gpt")
+
+class Animal:
+    def __init__(self, name, age, species):
+        self.name = name
+        self.age = age
+        self.species = species
+
+class Cat(Animal):
+    def deskripsi(self):
+        return f"{self.name} adalah kucing berjenis {self.species} yang sudah berumur {self.age} tahun"
+    
+    def suara(self):
+        return "meow!"
+
+# Membuat instance dari kelas Cat
+myCat = Cat(name="Neko", age=3, species="Persian")
+
+# Contoh penggunaan
+print(myCat.deskripsi())  # Output: Neko adalah kucing berjenis Persian yang sudah berumur 3 tahun
+print(myCat.suara())      # Output: meow!
+
+print("________________")
+print("KUIS DICODING")
+print("________________")
+
+class Mobil:
+    def __init__(self):
+    self.warna = "merah"
