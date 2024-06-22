@@ -27,7 +27,13 @@ def minimal(a, b):
     else:
         return b
 
+#pprosedur (dalam tulisan greeting) bisa mengganti fungsi
 def greeting(name):
     print("Halo " + name + ", Selamat Datang!")
 
 greeting("Dicoding Indonesia")
+
+def greeting():
+    print("Halo Selamat Datang!")
+
+greeting()

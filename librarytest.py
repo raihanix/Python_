@@ -46,7 +46,7 @@ class TestUser(unittest.TestCase):
     #test case 1
     def test_user_default_not_active(self):
         db = koneksi_ke_db()
-        dicoding = user(db, "dicoding")
+        dicoding = User(db, "dicoding")
         self.assertFalse(dicoding.aktif) #tidak aktif secara default
         putus_koneksi_db(db)
 

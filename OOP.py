@@ -326,6 +326,3 @@ print("________________")
 print("KUIS DICODING")
 print("________________")
 
-class Mobil:
-    def __init__(self):
-    self.warna = "merah"

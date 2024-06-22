@@ -41,15 +41,14 @@
 # var_arr = [9,8,6,5,4,3,2,1,0]
 # print(var_arr)
 
-var_arr = [0 for i in range(5)]
-for i in range(0):
-print(var_arr)
+# var_arr = [0 for i in range(10)]
+# print(var_arr)
 
-var_arr = [0 for j in range(10)]
-for j in range(10):
-    var_arr[j] = j
+# var_arr = [0 for i in range(10)]
+# for i in range(10):
+#     var_arr[i] = i
 
-print(var_arr)
+# print(var_arr)
 
 # var_arr = [1,2,3,4,5]
 

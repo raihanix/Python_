@@ -58,6 +58,28 @@ def divide_numbers(a, b):
     return a / b
 
 try:
-    result = divide_numbers(10,2)
+    result = divide_numbers(10,0)
 except DivideByZeroError as e:
     print(f"Error: {e}")
+
+'''Pada contoh di atas, kita membuat sebuah pengecualian berasal dari kelas 
+yang dibuat. Kita membuat kelas bernama "DivideByZeroError" yang menginduk 
+pada kelas Exception dari Python. Perhatikan bahwa kita menempatkan kata 
+error di akhir penamaannya.'''
+
+class MyClass:
+    def __init__(self):
+        self.private_var = 42 #variabel non publik dengan awalan satu
+        self._secret_list = [1,2,3] #variabel non publik lainnya
+    
+    def _private_method(self):
+        print("ini adalah metode non publik")
+
+    def public_method(self):
+        print("ini adalah metode publik")
+    
+'''method '_private_method' merupakan jenis fungsi yang tidak diakses secara 
+langsung. Anda bisa melihat pada method 'public_method', tempat kita 
+menggunakan method private di sana. Selain itu, variabel seperti '_private_var'
+atau '_secret_list' merupakan variabel non_publik yang tidak digunakan secara
+langsung ketika kelas dipanggil.'''
